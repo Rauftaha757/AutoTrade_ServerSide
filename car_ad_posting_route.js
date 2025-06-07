@@ -73,7 +73,7 @@ CarAd_router.post("/api/getcarbysearch", async (req, res) => {
         company ?  {company :{ $regex: company, $options: "i" }} : null,
         name ? { carname : { $regex : name , $options :"i"}} : null, 
         enginecapacity ? { enginecapacity : { $regex:enginecapacity ,$options:"i"}} : null,
-        city ? { city : { $regex : city} , $options : "i" } : null,
+        city ? { city : { $regex : city , $options : "i" }} : null,
       ].filter(Boolean),
     });
 
