@@ -19,5 +19,5 @@ app.use(authRouter);
 app.use(CarAd_router);
 
 app.listen(port,"0.0.0.0", () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`https://autotradeserverside-production.up.railway.app`);
 });
