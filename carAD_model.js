@@ -62,6 +62,6 @@ const CarAd = new Schema({
   },
 });
 
-const carAd_model = models.carad || model("carad", CarAd);
+const carAd_model = models.carAd || model("carAd", CarAd);
 
 module.exports = carAd_model;
