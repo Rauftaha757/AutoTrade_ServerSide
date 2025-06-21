@@ -1,8 +1,8 @@
 const express = require("express");
 const CarAd_router = express.Router();
-const carAd_model = require("./carAD_model");
+const carAd_model = require("./carAD_model.js");
 const { error } = require("console");
-const { find } = require("./carAD_model");
+const { find } = require("./carAD_model.js");
 const { Query } = require("mongoose");
 
 CarAd_router.post("/api/publishAd", async (req, res) => {
