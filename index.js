@@ -3,7 +3,7 @@ require("dotenv").config();
 const authRouter = require("./auth_routes");
 const CarAd_router = require("./car_ad_posting_route");
 const dburl = process.env.dburl;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000; // ✔️ Fallback to 3000 if PORT not set (for local development)
 const mongoose = require("mongoose");
 
 const app = express();
@@ -19,5 +19,5 @@ app.use(authRouter);
 app.use(CarAd_router);
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`https://autotradeserverside-production.up.railway.app ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
