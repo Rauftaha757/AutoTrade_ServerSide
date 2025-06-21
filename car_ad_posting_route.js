@@ -1,6 +1,6 @@
 const express = require("express");
 const CarAd_router = express.Router();
-const carAd_model = require("./carad_model");
+const carAd_model = require("./carAD_model");
 const { error } = require("console");
 const { find } = require("./carAD_model");
 const { Query } = require("mongoose");
