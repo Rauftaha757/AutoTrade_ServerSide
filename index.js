@@ -19,21 +19,6 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-// CORS for Railway
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  if (req.method === "OPTIONS") {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -71,8 +56,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: "Internal server error" });
 });
 
-// 404 handler
-app.use("*", (req, res) => {
+// 404 handler - FIXED: removed wildcard route
+app.use((req, res) => {
   res.status(404).json({ error: "Route not found" });
 });
 
