@@ -5,7 +5,7 @@ const { error } = require("console");
 const { find } = require("./carAD_model.js");
 const { Query } = require("mongoose");
 
-CarAd_router.post("/api/publishAd", async (req, res) => {
+CarAd_router.post("/publishAd", async (req, res) => {
   const {
     milage,
     imageurl,
@@ -48,7 +48,7 @@ CarAd_router.post("/api/publishAd", async (req, res) => {
   }
 });
 
-CarAd_router.get("/api/getallcarad", async (req, res) => {
+CarAd_router.get("/getallcarad", async (req, res) => {
   try {
     const cars = await carAd_model.find().sort({ createdAt: -1 });
 
@@ -64,7 +64,7 @@ CarAd_router.get("/api/getallcarad", async (req, res) => {
   }
 });
 
-CarAd_router.post("/api/getcarbysearch", async (req, res) => {
+CarAd_router.post("/getcarbysearch", async (req, res) => {
   const { name, company, city, enginecapacity } = req.body;
 
   try {

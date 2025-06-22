@@ -17,7 +17,7 @@ const { json } = require("body-parser");
 //   standardHeaders: true,
 //   legacyHeaders: false,
 // });
-authRouter.post("/api/signup", async (req, res) => {
+authRouter.post("/signup", async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const exsistuser = await UserModel.findOne({ email });
@@ -51,7 +51,7 @@ authRouter.post("/api/signup", async (req, res) => {
 });
 
 
-authRouter.post("/api/signin", async function (req, res) {
+authRouter.post("/signin", async function (req, res) {
   const { email, password } = req.body;
   try {
     const exsistuser = await UserModel.findOne({ email });

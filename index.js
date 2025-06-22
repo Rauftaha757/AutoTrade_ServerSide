@@ -47,8 +47,9 @@ mongoose
     console.error("❌ MongoDB connection error:", err);
   });
 
-app.use(authRouter);
-app.use(CarAd_router);
+// API Routes - organized under /api prefix
+app.use("/api", authRouter);
+app.use("/api", CarAd_router);
 
 // Error handling
 app.use((err, req, res, next) => {
